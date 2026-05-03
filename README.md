@@ -46,7 +46,7 @@ forge auth login --domain gitea.example.com --token abc123 --type gitea
 
 Check what's configured with `forge auth status`.
 
-Tokens are resolved in this order: CLI flags, environment variables (`FORGE_TOKEN`, `GITHUB_TOKEN`/`GH_TOKEN`, `GITLAB_TOKEN`, `GITEA_TOKEN`, `BITBUCKET_TOKEN`), then the config file at `~/.config/forge/config`.
+Tokens are resolved in this order: CLI flags, environment variables (`FORGE_TOKEN`, `GITHUB_TOKEN`/`GH_TOKEN`, `GITLAB_TOKEN`, `GITEA_TOKEN`, `BITBUCKET_TOKEN`), then the config file at `~/.config/forge/config`. Set `FORGE_HOST` to override which domain is used when there's no git remote to infer it from.
 
 ### Configuration
 
@@ -95,7 +95,7 @@ client := forges.NewClient(
 repo, err := client.FetchRepository(ctx, "https://github.com/octocat/hello-world")
 ```
 
-The `Forge` interface exposes services for repos, issues, pull requests, reviews, releases, CI, branches, labels, milestones, deploy keys, secrets, and notifications. Each backend implements these using its native SDK.
+The `Forge` interface exposes services for repos, issues, pull requests, reviews, releases, CI, branches, labels, milestones, deploy keys, secrets, notifications, files, collaborators, and commit statuses. Each backend implements these using its native SDK.
 
 ```go
 f, _ := client.ForgeFor("github.com")
@@ -130,3 +130,7 @@ PURL support via `github.com/git-pkgs/purl`:
 p, _ := purl.Parse("pkg:npm/lodash?repository_url=https://github.com/lodash/lodash")
 repo, err := client.FetchRepositoryFromPURL(ctx, p)
 ```
+
+## License
+
+MIT. See [LICENSE](LICENSE).
