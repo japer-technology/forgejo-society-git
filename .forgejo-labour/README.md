@@ -242,3 +242,9 @@ Labour from any greater AI infrastructure can:
   — the parent project's own Labour doorway, from which this folder
   inherits its identity.
 - [`../README.md`](../README.md) — what `forge` actually is.
+
+<p align="right">
+  <picture>
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/LOGO.png" alt="Forgejo Society" width="80">
+  </picture>
+</p>
